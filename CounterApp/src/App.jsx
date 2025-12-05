@@ -5,7 +5,7 @@ function App(){
     <div>
       <Counter />
     </div>
-  )
+  );
 }
 
 export default App;
