@@ -5,6 +5,11 @@ function ToDoApp(){
     const [tasks, setTasks] = useState([]);
     const [editingIndex, setEditingIndex] = useState(null);
     const [editingText, setEditingText] = useState("");
+    const [searchText, setSearchText] = useState("");
+
+    const filteredTasks = tasks.filter(t => 
+        t.toLowerCase().includes(searchText.toLowerCase())
+    );
 
     function addTask(){
         if(task.trim() === "") return;
@@ -40,8 +45,10 @@ function ToDoApp(){
 
             <button onClick={addTask}>Add Task</button>
 
+            <input type="text" placeholder="Search tasks..." value={searchText} onChange={(e) => setSearchText(e.target.value)}/>
+
             <ul>
-                {tasks.map((t, index) => (
+                {filteredTasks.map((t, index) => (
                     <li key={index}>
                         {editingIndex === index ? (
                             <input 
