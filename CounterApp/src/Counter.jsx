@@ -10,7 +10,7 @@ function Counter(){
                 <h2 className="text-2xl font-semibold mb-4">Counter App</h2>
                 <p className="text-xl font-bold mb-6">Count: {count}</p>
 
-                <div className="flex justify-center gap-4">
+                <div className="flex justify-center gap-4 mt-10">
                     <MyButton text="+1" onClick={() => setCount(count+1)} className="bg-blue-500 text-white hover:bg-blue-600"/>
 
                     <MyButton text="-1" onClick={() => setCount(count-1)} disabled={count<=0}
