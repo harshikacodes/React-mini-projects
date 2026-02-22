@@ -12,7 +12,7 @@ function App() {
   return (
     <div>
       <h1>Dice Roller</h1>
-      <p>Dice Value: {dice}</p>
+      <img src={`./images/dice-${dice}.png`} alt="" />
       <button onClick={rollDice}>Roll Dice</button>
     </div>
   ) 
