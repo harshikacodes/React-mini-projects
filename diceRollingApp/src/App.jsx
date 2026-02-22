@@ -5,8 +5,15 @@ function App() {
   const [dice, setDice] = useState(1);
 
   function rollDice(){
-    const random = Math.floor(Math.random() * 6) + 1;
-    setDice(random);
+    const interval = setInterval(() => {
+      const random = Math.floor(Math.random() * 6) + 1;
+      setDice(random);
+      console.log(random);
+    }, 50);
+
+    setTimeout(() => {
+      clearInterval(interval);
+    }, 1000);
   }
 
   return (
